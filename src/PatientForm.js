@@ -60,9 +60,14 @@ export default function PatientForm() {
   };
 
   return (
-<div className="flex items-center justify-center min-h-screen bg-slate-400">
-  <form className="bg-white p-4 shadow-md rounded-md w-[400px]">
-    <h2 className="text-2xl font-bold mb-2 text-center">Patient Information Form</h2>
+
+
+
+
+    
+<div className="flex items-center justify-center min-h-screen bg-blue-200">
+  <form className="bg-white p-2  rounded-md w-[400px]">
+    <h2 className=" font-bold  text-center">Patient Information Form</h2>
     {[
       { label: 'Patient Name', name: 'ptname', type: 'text', placeholder: 'Enter Patient Name' },
       { label: 'Age', name: 'age', type: 'text', placeholder: 'Enter Age' },
@@ -92,14 +97,14 @@ export default function PatientForm() {
       { label: 'Amount Due', name: 'amtdue', type: 'number', placeholder: 'Enter Amount Due' },
       { label: 'RC Less', name: 'rcless', type: 'number', placeholder: 'Enter RC Less' },
     ].map(({ label, name, type, placeholder, options }, index) => (
-      <div key={index} className="mb-6">
-        <label className="text-gray-700 font-semibold mb-2 text-lg">{label}:</label>
+      <div key={index} className="mb-1">
+        <label className="text-black font-semibold  text-sm  ">{label}:</label>
         {type === 'select' ? (
           <select
             name={name}
             value={formData[name]}
             onChange={handleInputChange}
-            className="border-2 border-gray-300 p-1 rounded w-full"
+            className="border-2 border-black p-1 rounded w-28 h-8 "
           >
             <option value="" disabled>
               Choose Test...
@@ -117,7 +122,7 @@ export default function PatientForm() {
             placeholder={placeholder}
             value={formData[name]}
             onChange={handleInputChange}
-            className="border-2 border-gray-300 p-3 rounded w-full"
+            className="border-2 border-black p-2 rounded text-sm   w-40 h-8"
             required
           />
         )}
@@ -129,7 +134,7 @@ export default function PatientForm() {
     <button
       type="button"
       onClick={generatePDF}
-      className="bg-blue-600 text-white py-3 px-6 rounded hover:bg-blue-700 transition-colors w-full text-lg"
+      className="bg-blue-600 text-white py-2 px-3 rounded hover:bg-blue-700 transition-colors  text-sm"
     >
       Generate PDF
     </button>
